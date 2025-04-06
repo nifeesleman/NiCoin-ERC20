@@ -48,4 +48,16 @@ contract NiCoinTest is Test {
         assertEq(niCoin.balanceOf(alice), 5 ether);
         assertEq(niCoin.balanceOf(bob), STARTING_BALANCE - 5 ether);
     }
+
+    function testTransferToZeroAddressShouldFail() public {
+        vm.expectRevert("ERC20: transfer to the zero address");
+        vm.prank(bob);
+        niCoin.transfer(address(0), 1 ether);
+    }
+
+    function testApproveZeroAddressShouldFail() public {
+        vm.expectRevert("ERC20: approve to the zero address");
+        vm.prank(bob);
+        niCoin.approve(address(0), 100);
+    }
 }
