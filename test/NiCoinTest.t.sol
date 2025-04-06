@@ -40,4 +40,12 @@ contract NiCoinTest is Test {
         assertEq(niCoin.balanceOf(alice), initialAllowance);
         assertEq(niCoin.balanceOf(bob), STARTING_BALANCE - initialAllowance);
     }
+
+    function testTransferWorks() public {
+        vm.prank(bob);
+        niCoin.transfer(alice, 5 ether);
+
+        assertEq(niCoin.balanceOf(alice), 5 ether);
+        assertEq(niCoin.balanceOf(bob), STARTING_BALANCE - 5 ether);
+    }
 }
