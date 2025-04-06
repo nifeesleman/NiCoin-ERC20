@@ -9,9 +9,11 @@ import {NiCoin} from "../src/NiCoin.sol";
 contract DeployNiCoin is Script {
     uint256 public constant INITAL_SUPPLY = 100 ether;
 
-    function run() external {
+    function run() external returns (NiCoin) {
         vm.startBroadcast();
-        new NiCoin(INITAL_SUPPLY);
+
+        NiCoin nc = new NiCoin(INITAL_SUPPLY);
         vm.stopBroadcast();
+        return nc;
     }
 }
