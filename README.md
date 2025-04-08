@@ -2,15 +2,7 @@
 
 NiCoin is an ERC-20 compliant token built on the Ethereum blockchain, developed to provide a decentralized and secure way to transfer value on-chain. NiCoin uses the ERC-20 standard, which is the most commonly used token standard in the Ethereum ecosystem.
 
-## Table of Contents
 
-- [Overview](#overview)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 
